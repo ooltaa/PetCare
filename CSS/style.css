@@ -120,19 +120,6 @@ ul li a:hover{
   background-color: #ffffff;
 }
 
-./*about-us-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(footprint.jpg) no-repeat center center; 
-  background-size: contain; 
-  opacity: 0.5; 
-  pointer-events: none; /
-} fotoja background te about us*/
-
 .about-us-header {
   font-size: 2rem;
   font-weight: bold;
