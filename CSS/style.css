@@ -119,6 +119,18 @@ ul li a:hover{
   padding: 50px 20px;
   background-color: #ffffff;
 }
+/*.about-us-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://media.istockphoto.com/id/868292512/vector/vet-seamless-pattern.jpg?s=612x612&w=0&k=20&c=76km5K-IGwnYP_as4Kxsq9pXrr2IY4Kx_17PMhoXbR4=3) no-repeat center center;
+  background-size: cover;
+  opacity: 0.5;
+  pointer-events: none;
+}*/
 
 .about-us-header {
   font-size: 2rem;
@@ -147,4 +159,81 @@ ul li a:hover{
 .about-us-content strong {
   font-weight: bold;
 
+}
+.store-section {
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.store-header h2 {
+  font-size: 2.5rem;
+  color: #6f0921;
+  margin-bottom: 15px;
+}
+
+.store-header p {
+  font-size: 1rem;
+  color: #252121;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  color: #6f0921;
+  margin: 10px 0;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: #252121;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #845e12;
+}
+
+.buy-btn {
+  background-color: #6f0921;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: #845e12;
 }
