@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Grooming Contact Form</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #d9bfbf;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #f5e2e2;
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .form-container img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #5b4a4a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #7c6d6d;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: bold;
+      color: #5b4a4a;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #c5b3b3;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .name-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .name-container input {
+      flex: 1;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      border: 1px solid #c5b3b3;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .radio-group input {
+      display: none;
+    }
+
+    .radio-group input:checked + label {
+      background-color: #a47474;
+      color: white;
+      border-color: #a47474;
+    }
+
+    button {
+      background-color: #a47474;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #8b5c5c;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <img src="images/contact.png" alt="Pet Grooming">
+    <h1>Pet Grooming Contact Form</h1>
+    <p>Fill out the form below, and we will contact you soon.</p>
+    <form action="#">
+      <div class="name-container">
+        <input type="text" placeholder="First" required>
+        <input type="text" placeholder="Last" required>
+      </div>
+      <input type="email" placeholder="Email address:" required>
+      <input type="tel" placeholder="### ### ####" required>
+      <div class="radio-group">
+        <input type="radio" id="grooming" name="service" value="Grooming" required>
+        <label for="grooming">Grooming</label>
+
+        <input type="radio" id="daycare" name="service" value="Daycare" required>
+        <label for="daycare">Daycare</label>
+
+        <input type="radio" id="teeth-cleaning" name="service" value="Teeth cleaning" required>
+        <label for="teeth-cleaning">Teeth cleaning</label>
+
+        <input type="radio" id="boarding" name="service" value="Boarding" required>
+        <label for="boarding">Boarding</label>
+
+        <input type="radio" id="other" name="service" value="Other" required>
+        <label for="other">Other</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
