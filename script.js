@@ -1,8 +1,11 @@
-// document.querySelectorAll('.navbar a').forEach(anchor => {
-//     anchor.addEventListener('click', function(e) {
-//         e.preventDefault();
-//         document.querySelector(this.getAttribute('href')).scrollIntoView({
-//             behavior: 'smooth'
-//         });
-//     });
-// });
+let currentSlide = 0;
+
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+
+        const slider = document.getElementById('slider');
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
