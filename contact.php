@@ -147,7 +147,7 @@
   <h1>Pet Grooming Contact Form</h1>
   <p>Fill out the form below, and we will contact you soon.</p>
   <div class="form-container">
-    <form id="contact-form" action="contact.php" method="POST">
+  <form id="contact-form" action="process_contact.php" method="POST">
       <div class="name-container">
         <input type="text" name="first_name" placeholder="First Name" required>
         <input type="text" name="last_name" placeholder="Last Name" required>
@@ -171,15 +171,5 @@
     </form>
     <div class="success-message" id="success-message">Thank you! We have received your request.</div>
   </div>
-
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault(); 
-      document.getElementById("success-message").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("contact-form").submit();
-      }, 2000);
-    });
-  </script>
 </body>
 </html>
