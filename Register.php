@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://media.istockphoto.com/id/1392556345/video/watercolor-paw-pads-illustration-background.jpg?s=640x640&k=20&c=XSWYOafmGlk-pNRctpfkm7j7L1SlNL7uV3MjaQycff0='); 
+            background-image: url('https://i.pinimg.com/736x/ed/b4/4e/edb44e0dd8d14336133fa4315e87e775.jpg'); 
             background-position: center; 
             background-attachment: fixed; 
             display: flex;
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button {
             width: 100%;
             padding: 12px;
-            background: #0984e3;
+            background:rgb(65, 47, 47);
             color: white;
             font-size: 16px;
             border: none;
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         button:hover {
-            background: #74b9ff;
+            background:rgb(112, 69, 69);
         }
 
         .form-switch {
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .form-switch a {
-            color: #0984e3;
+            color:rgb(147, 65, 69);
             text-decoration: none;
             font-weight: bold;
         }

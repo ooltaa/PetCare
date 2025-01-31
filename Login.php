@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   <style>
   body {
     font-family: Arial, sans-serif;
-    background-image: url('images/background.jpg'); 
+    background-image: url('https://i.pinimg.com/736x/67/27/26/672726693814a2e6246b9416eff7f67b.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-attachment: fixed; 
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color:rgb(107, 79, 79);
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,14 +69,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     font-size: 16px;
   }
   button:hover {
-    background-color: #45a049;
+    background-color:rgb(86, 55, 57);
   }
   .form-switch {
     text-align: center;
     margin-top: 10px;
   }
   .form-switch a {
-    color: #4CAF50;
+    color:rgb(121, 52, 65);
     text-decoration: none;
   }
   .form-switch a:hover {
