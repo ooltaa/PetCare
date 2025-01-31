@@ -5,6 +5,8 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit();
 }
+$user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
+
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +38,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="content">
         <div class="text-container">
+        <h1>Welcome, <span><?php echo htmlspecialchars($user_name); ?></span>!</h1>
             <h1><span>Pet</span>Lover</h1>
             <p class="par"><h2>When your pet is healthy and happy, you are happy too!</h2></p>
             <p><h3>They love you their entire life, you love them just in one part of your life.</h3></p>

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Grooming Contact Form</title>
+  <link rel="stylesheet" href="CSS/style.css">
   <style>
-    
     * {
       margin: 0;
       padding: 0;
@@ -13,41 +13,49 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #d9bfbf;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       min-height: 100vh;
       padding: 20px;
     }
 
-    .form-container {
-      background-color: #f5e2e2;
-      border-radius: 15px;
-      padding: 20px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .form-container img {
-      max-width: 100%;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
     h1 {
-      font-size: 24px;
-      color: #5b4a4a;
+      font-size: 28px;
+      color: #333;
+      text-align: center;
       margin-bottom: 10px;
     }
 
     p {
-      color: #7c6d6d;
+      color: #777;
       font-size: 16px;
+      text-align: center;
       margin-bottom: 20px;
+    }
+
+    .form-container {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid #ff6b81;
+    }
+
+    .success-message {
+      display: none;
+      background: #28a745;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
     }
 
     form {
@@ -56,104 +64,122 @@
       gap: 15px;
     }
 
-    label {
-      text-align: left;
-      font-weight: bold;
-      color: #5b4a4a;
-    }
-
     input[type="text"], input[type="email"], input[type="tel"] {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #c5b3b3;
-      border-radius: 5px;
-      font-size: 14px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #ff6b81;
+      outline: none;
     }
 
     .name-container {
       display: flex;
-      gap: 10px;
+      gap: 15px;
     }
 
     .name-container input {
       flex: 1;
     }
 
-    .radio-group {
+    .checkbox-group {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
     }
 
-    .radio-group label {
+    .checkbox-group p {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .checkbox-group label {
       display: flex;
       align-items: center;
       gap: 5px;
-      background-color: white;
-      padding: 8px 12px;
+      background: white;
+      padding: 10px 15px;
       border-radius: 20px;
-      border: 1px solid #c5b3b3;
+      border: 1px solid #ddd;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
+      transition: 0.3s;
     }
 
-    .radio-group input {
+    .checkbox-group input {
       display: none;
     }
 
-    .radio-group input:checked + label {
-      background-color: #a47474;
+    .checkbox-group input:checked + label {
+      background: #ff6b81;
       color: white;
-      border-color: #a47474;
+      border-color: #ff6b81;
     }
 
     button {
-      background-color: #a47474;
+      background: #ff6b81;
       color: white;
       border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
+      padding: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #8b5c5c;
+      background: #e35b72;
     }
   </style>
 </head>
 <body>
-  <section id="contact">
+  <h1>Pet Grooming Contact Form</h1>
+  <p>Fill out the form below, and we will contact you soon.</p>
   <div class="form-container">
-    <img src="images/contact.png" alt="Pet Grooming">
-    <h1>Pet Grooming Contact Form</h1>
-    <p>Fill out the form below, and we will contact you soon.</p>
-    <form action="contact.php">
+    <form id="contact-form" action="contact.php" method="POST">
       <div class="name-container">
-        <input type="text" placeholder="First" required>
-        <input type="text" placeholder="Last" required>
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
       </div>
-      <input type="email" placeholder="Email address:" required>
-      <input type="tel" placeholder="### ### ####" required>
-      <div class="radio-group">
-        <input type="radio" id="grooming" name="service" value="Grooming" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <div class="checkbox-group">
+        <p>Choose the services for your pet:</p>
+        <input type="checkbox" id="grooming" name="service[]" value="Grooming">
         <label for="grooming">Grooming</label>
-
-        <input type="radio" id="daycare" name="service" value="Daycare" required>
+        <input type="checkbox" id="daycare" name="service[]" value="Daycare">
         <label for="daycare">Daycare</label>
-
-        <input type="radio" id="teeth-cleaning" name="service" value="Teeth cleaning" required>
-        <label for="teeth-cleaning">Teeth cleaning</label>
-
-        <input type="radio" id="boarding" name="service" value="Boarding" required>
+        <input type="checkbox" id="teeth-cleaning" name="service[]" value="Teeth cleaning">
+        <label for="teeth-cleaning">Teeth Cleaning</label>
+        <input type="checkbox" id="boarding" name="service[]" value="Boarding">
         <label for="boarding">Boarding</label>
-
-        <input type="radio" id="other" name="service" value="Other" required>
+        <input type="checkbox" id="other" name="service[]" value="Other">
         <label for="other">Other</label>
       </div>
       <button type="submit">Submit</button>
     </form>
+    <div class="success-message" id="success-message">Thank you! We have received your request.</div>
   </div>
-</section>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      document.getElementById("success-message").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("contact-form").submit();
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
