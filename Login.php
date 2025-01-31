@@ -1,32 +1,30 @@
 <?php
-session_start();
+require_once 'User.php';
 
-include_once 'Database.php';
-include_once 'User.php';
+$errorMessage = "";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $db = new DataBase();
-    $connection = $db->getConnection();
-    $user = new user ($connection);
+if (isset($_POST["submit"])) {
+    $username = $_POST["email"];
+    $password = $_POST["password"];
 
-    $email = $_POST ['email'];
-    $password = $_POST ['password'];
+    $user = new User();
 
-    if($user->login($email, $password)){
-        header( " Location : index.php");
-        exit;
-    }else{
-        echo "Invalid login credentials!";
+    $loginResult = $user->login($email, $password);
+
+    
+    if ($loginResult === true) {
+        session_start();
+        if ($_SESSION['role'] === 'admin') {
+            header("Location: admindashboard.php");
+        } else {
+            header("Location: userdashboard.php");
+        }
+        exit();
+    } else {
+        $errorMessage = $loginResult;
     }
 }
 ?>
-<form action="login.php" method="POST">
-    Email: <input type="email" name="email" required> <br>
-    Password: <input type="password" name="password" required><br>
-    <button type="submit">Log in</button>
-</form>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -125,34 +123,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   <div class="container">
   <div id="loginForm">
       <h2>Login</h2>
-      <form action="#" method="POST">
-        <input type="text" name="username" placeholder="Username" required>
+      <form action="Login.php" method="POST">
+        <input type="text" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
       </form>
       <div class="form-switch">
-        <p>Don't have an account? <a href="Register.html" >Register</a></p>
+        <p>Don't have an account? <a href="Register.php" >Register</a></p>
       </div>
     </div>
   </div>
   </section>
 
-  <!-- <section id="register">
-    <div id="registerForm" style="display: none;">
-        <h1>Register</h1>
-          <form action="#" method="POST">
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-          </form>
-          <div class="form-switch">
-            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  -->
   <script>
     function showRegisterForm() {
       document.getElementById('loginForm').style.display = 'none';

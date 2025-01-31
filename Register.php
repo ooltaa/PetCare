@@ -1,3 +1,4 @@
+
 <?php
 include_once 'Database.php';
 include_once 'User.php';
@@ -6,15 +7,17 @@ include_once 'User.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $db = new DataBase();
     $connection = $db->getConnection();
-    $user = new user (db: $connection);
+    $user = new User ( $connection);
 
 
-    $fullname = $_POST ['fullname'];
+    $firstname = $_POST ['firstname'];
+    $lastname = $_POST ['lastname'];
+    $age = $_POST ['age'];
     $email = $_POST ['email'];
     $password = $_POST ['password'];
 
-    if($user->register( $fullname, $email, $password)){
-        header(header: " Location: Login.php");
+    if($user->register($firstname, $lastname, $age, $email, $password)){
+        header("Location: Login.php");
         exit;
     }else{
         echo "Error registering user!";
@@ -22,82 +25,81 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 ?>
 
-
-
-<form action="register.php" method="POST">
-    Fullname: <input type="text" name="fullname" required><br>
-    Email: <input type="email" name="email" required> <br>
-    Password: <input type="password" name="password" required><br>
-    <button type="submit">Register</button>
-</form>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="CSS/style.css">
     <style>
-      body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://media.istockphoto.com/id/1392556345/video/watercolor-paw-pads-illustration-background.jpg?s=640x640&k=20&c=XSWYOafmGlk-pNRctpfkm7j7L1SlNL7uV3MjaQycff0=') !important; 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1392556345/video/watercolor-paw-pads-illustration-background.jpg?s=640x640&k=20&c=XSWYOafmGlk-pNRctpfkm7j7L1SlNL7uV3MjaQycff0='); 
+            background-position: center; 
+            background-attachment: fixed; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        h2 {
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
             text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #2d3436;
             margin-bottom: 20px;
         }
 
-        input[type="text"], input[type="password"], input[type="email"] {
+        form {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #dfe6e9;
+            border-radius: 8px;
             box-sizing: border-box;
+            font-size: 14px;
         }
 
         button {
             width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
+            padding: 12px;
+            background: #0984e3;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
             font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #45a049;
+            background: #74b9ff;
         }
 
         .form-switch {
-            text-align: center;
             margin-top: 10px;
         }
 
         .form-switch a {
-            color: #4CAF50;
+            color: #0984e3;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .form-switch a:hover {
@@ -106,30 +108,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </style>
 </head>
 <body>
-    <section id="register">
-        <div id="registerForm">
-            <h1>Register</h1>
-            <form action="#" method="POST">
-                <input type="text" name="fullname" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Register</button>
-            </form>
-            <div class="form-switch">
-                <p>Already have an account? <a href="Login.html" onclick="showLoginForm()">Login</a></p>
-            </div>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="Register.php" method="POST">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            <input type="number" name="age" placeholder="Age" min="1" max="100" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="form-switch">
+            <p>Already have an account? <a href="Login.php">Login</a></p>
         </div>
-    </section>
-    <script>
-        function showRegisterForm() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'block';
-        }
-
-        function showLoginForm() {
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('loginForm').style.display = 'block';
-        }
-    </script>
+    </div>
 </body>
 </html>

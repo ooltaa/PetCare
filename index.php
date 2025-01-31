@@ -19,9 +19,9 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About us</a></li>
                 <li><a href="#store">Store</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Login.html">Login</a></li>
-                <li><a href="Register.html">Register</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="Login.php">Login</a></li>
+                <li><a href="Register.php">Register</a></li>
             </ul>
         </div>
     </div>
