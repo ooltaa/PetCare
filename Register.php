@@ -1,28 +1,29 @@
-
 <?php
-require_once User.php;
+require_once 'Database.php';
+require_once 'User.php';
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $user = new User($db->getConnection());
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $db = new DataBase();
-    $connection = $db->getConnection();
-    $user = new User ( $connection);
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $result = $user->register($firstname, $lastname, $age, $email, $password);
 
-    $firstname = $_POST ['firstname'];
-    $lastname = $_POST ['lastname'];
-    $age = $_POST ['age'];
-    $email = $_POST ['email'];
-    $password = $_POST ['password'];
-
-    if($user->register($firstname, $lastname, $age, $email, $password)){
+    if ($result === true || $result === "Regjistrimi u krye me sukses.") {
         header("Location: Login.php");
-        exit;
-    }else{
-        echo "Error registering user!";
+        exit();
+    } else {
+        echo "<script>alert('$result');</script>";
     }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
