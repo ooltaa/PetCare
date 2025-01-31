@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      background: linear-gradient(to right,rgb(171, 119, 121),rgb(234, 164, 164));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -44,12 +44,12 @@
       max-width: 600px;
       width: 100%;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 2px solid #ff6b81;
+      border: 2px solidrgb(174, 111, 121);
     }
 
     .success-message {
       display: none;
-      background: #28a745;
+      background:rgb(137, 69, 74);
       color: white;
       padding: 15px;
       border-radius: 8px;
@@ -74,7 +74,7 @@
     }
 
     input:focus {
-      border-color: #ff6b81;
+      border-color:rgb(76, 29, 34);
       outline: none;
     }
 
@@ -121,13 +121,13 @@
     }
 
     .checkbox-group input:checked + label {
-      background: #ff6b81;
+      background:rgb(97, 40, 48);
       color: white;
       border-color: #ff6b81;
     }
 
     button {
-      background: #ff6b81;
+      background:rgb(142, 69, 80);
       color: white;
       border: none;
       padding: 12px;
@@ -169,7 +169,5 @@
       </div>
       <button type="submit">Submit</button>
     </form>
-    <div class="success-message" id="success-message">Thank you! We have received your request.</div>
-  </div>
 </body>
 </html>
