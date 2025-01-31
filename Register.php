@@ -1,3 +1,38 @@
+<?php
+include_once 'Database.php';
+include_once 'User.php';
+
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $db = new DataBase();
+    $connection = $db->getConnection();
+    $user = new user (db: $connection);
+
+
+    $fullname = $_POST ['fullname'];
+    $email = $_POST ['email'];
+    $password = $_POST ['password'];
+
+    if($user->register( $fullname, $email, $password)){
+        header(header: " Location: Login.php");
+        exit;
+    }else{
+        echo "Error registering user!";
+    }
+}
+?>
+
+
+
+<form action="register.php" method="POST">
+    Fullname: <input type="text" name="fullname" required><br>
+    Email: <input type="email" name="email" required> <br>
+    Password: <input type="password" name="password" required><br>
+    <button type="submit">Register</button>
+</form>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
