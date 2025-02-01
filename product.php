@@ -1,6 +1,5 @@
 <?php
-require_once 'Database.php';
-
+require_once 'Database.php'; 
 class Product {
     private $conn;
 
@@ -10,23 +9,16 @@ class Product {
     }
 
     public function getAllProducts() {
-        $stmt = $this->conn->prepare("SELECT * FROM products ORDER BY id DESC");
+        $stmt = $this->conn->prepare("SELECT id, name, price FROM products ORDER BY id DESC");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function addProduct($name, $price) {
-        $stmt = $this->conn->prepare("INSERT INTO products (name, price) VALUES (:name, :price)");
+        $stmt = $this->conn->prepare("INSERT INTO products (name, price) VALUES (:name, :price)"); 
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':price', $price, PDO::PARAM_INT);
         return $stmt->execute();
-    }
-
-    public function getProductById($id) {
-        $stmt = $this->conn->prepare("SELECT * FROM products WHERE id = :id");
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function updateProductPrice($id, $price) {
