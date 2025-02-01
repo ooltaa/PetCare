@@ -17,22 +17,22 @@
     <div class="sidebar">
         <h3>Navigation</h3>
         <ul>
-            <li><a href="manage_products.php">📦 Manage Products</a></li>
-            <li><a href="manage_requests.php">📩 Client Requests</a></li>
+            <li><a href="admin_orders.php">🛒 View Orders</a></li>
+            <li><a href="manage_request.php">📩 Client Requests</a></li>
         </ul>
     </div>
 
     
     <div class="main-content">
         <h1>Welcome, Admin!</h1>
-        <p>Select an option from the sidebar to start managing your store and client requests.</p>
+        <p>Select an option from the sidebar to start managing your orders and client requests.</p>
 
         <div class="dashboard-sections">
-            <a href="manage_products.php" class="dashboard-card">
+            <a href="admin_orders.php" class="dashboard-card">
                 <h3>🛒 View Orders</h3>
                 <p>View orders, change status and delete.</p>
             </a>
-            <a href="manage_requests.php" class="dashboard-card">
+            <a href="manage_request.php" class="dashboard-card">
                 <h3>📩 Client Requests</h3>
                 <p>View and manage requests from clients.</p>
             </a>
@@ -42,7 +42,7 @@
     <h3>Navigation</h3>
     <ul>
         <li><a href="adminDashboard.php">🏠 Dashboard</a></li>
-        <li><a href="manage_requests.php">📩 Client Requestss</a></li>
+        <li><a href="manage_request.php">📩 Client Requests</a></li>
         <li><a href="admin_orders.php">🛒 View Orders</a></li>
     </ul>
 </div>

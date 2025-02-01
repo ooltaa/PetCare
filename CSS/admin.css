@@ -9,7 +9,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: #333;
+    background-color: #443535;
     color: white;
     padding: 15px;
     text-align: center;
@@ -17,18 +17,18 @@ body {
 
 .navbar .logout-btn {
     position: absolute;
-    right: 20px;
+    right: 50px;
     top: 10px;
-    background-color: red;
+    background-color: rgb(138, 54, 54);
     color: white;
-    padding: 8px 12px;
+    padding: 9px 13px;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .sidebar {
     width: 250px;
-    background: #222;
+    background: #625151;
     padding: 20px;
     position: fixed;
     height: 100vh;
@@ -37,7 +37,7 @@ body {
 
 .sidebar h3 {
     text-align: center;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid #775858;
     padding-bottom: 10px;
 }
 
@@ -49,7 +49,7 @@ body {
 .sidebar ul li {
     padding: 15px;
     margin: 5px 0;
-    background: #333;
+    background: #9b7d7d;
     text-align: center;
     border-radius: 5px;
 }
@@ -62,7 +62,7 @@ body {
 }
 
 .sidebar ul li:hover {
-    background: #444;
+    background: #736060;
 }
 
 .main-content {
@@ -74,7 +74,7 @@ body {
 
 .main-content h1 {
     font-size: 30px;
-    color: #333;
+    color: #7c5b5b;
 }
 
 .main-content p {
@@ -97,7 +97,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    color: #333;
+    color: #755353;
     transition: 0.3s;
 }
 
@@ -107,5 +107,5 @@ body {
 
 .dashboard-card h3 {
     margin-bottom: 10px;
-    color: #222;
+    color: #715057;
 }
