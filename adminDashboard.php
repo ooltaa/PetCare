@@ -38,3 +38,13 @@
             </a>
         </div>
     </div>
+    <div class="sidebar">
+    <h3>Navigation</h3>
+    <ul>
+        <li><a href="adminDashboard.php">🏠 Dashboard</a></li>
+        <li><a href="manage_products.php">📦 Manage Products</a></li>
+        <li><a href="admin_orders.php">🛒 View Orders</a></li>
+    </ul>
+</div>
+</body>
+</html>

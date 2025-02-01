@@ -96,38 +96,56 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       </div>
   </div>
 </section>
-      <section id="store" class="store-section">
-        <div class="store-header">
-            <h2>Our Pet Store</h2>
-            <p>Find the best products for your furry friends! From toys to grooming essentials, we have it all.</p>
-        </div>
+<section id="store" class="store-section">
+    <div class="store-header">
+        <h2>Our Pet Store</h2>
+        <p>Find the best products for your furry friends! From toys to grooming essentials, we have it all.</p>
+    </div>
 
-        <div class="product-grid">
-          <div class="product-item">
-          <img src="https://target.scene7.com/is/image/Target/GUEST_f2fe38d0-8f47-4d16-9b17-af9c0a9e065f?wid=488&hei=488&fmt=pjpeg alt="Dog toy">
-          <div class="product-info">
-              <h3>Dog Toy</h3>
-              <p>Durable and fun toy for your dog.</p>
-              <p class="price">$10.99</p>
-              <button class="buy-btn" onclick="addToCart('Dog Toy', 10.99)">Buy Now</button>
-                </div>
+    <div class="product-grid">
+        <div class="product-item">
+            <img src="https://target.scene7.com/is/image/Target/GUEST_f2fe38d0-8f47-4d16-9b17-af9c0a9e065f?wid=488&hei=488&fmt=pjpeg" alt="Dog Toy">
+            <div class="product-info">
+                <h3>Dog Toy</h3>
+                <p>Durable and fun toy for your dog.</p>
+                <p class="price">$10.99</p>
+
+                <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Dog Toy">
+                    <input type="hidden" name="product_price" value="10.99">
+                    <input type="hidden" name="product_image" value="https://target.scene7.com/is/image/Target/GUEST_f2fe38d0-8f47-4d16-9b17-af9c0a9e065f?wid=488&hei=488&fmt=pjpeg">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
             </div>
-            <div class="product-item">
-              <img src="https://ip.prod.freshop.retail.ncrcloud.com/resize?url=https://images.freshop.ncrcloud.com/00023100107318/c21a098349ade0e5ab8dec9e0592e570_large.png&width=512&type=webp&quality=90" alt="Pet Food">
-              <div class="product-info">
-                  <h3>Dog Food</h3>
-                  <p>High-quality food for your dog' nutrition.</p>
-                  <p class="price">$25.99</p>
-                  <button class="buy-btn" onclick="addToCart('Pet Food', 25.99)">Buy Now</button>
-              </div>
-          </div>
-          <div class="product-item">
+        </div>
+        <div class="product-item">
+            <img src="https://ip.prod.freshop.retail.ncrcloud.com/resize?url=https://images.freshop.ncrcloud.com/00023100107318/c21a098349ade0e5ab8dec9e0592e570_large.png&width=512&type=webp&quality=90" alt="Dog Food">
+            <div class="product-info">
+                <h3>Dog Food</h3>
+                <p>High-quality food for your dog's nutrition.</p>
+                <p class="price">$25.99</p>
+
+                <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Dog Food">
+                    <input type="hidden" name="product_price" value="25.99">
+                    <input type="hidden" name="product_image" value="https://ip.prod.freshop.retail.ncrcloud.com/resize?url=https://images.freshop.ncrcloud.com/00023100107318/c21a098349ade0e5ab8dec9e0592e570_large.png&width=512&type=webp&quality=90">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
+            </div>
+        </div>
+        <div class="product-item">
             <img src="https://kindtail.com/cdn/shop/files/PINKLOUNGER-min_1200x.jpg?v=1709603766" alt="Pet Bed">
             <div class="product-info">
                 <h3>Dog Bed</h3>
                 <p>Comfortable bed for a peaceful rest.</p>
                 <p class="price">$49.99</p>
-                <button class="buy-btn" onclick="addToCart('Pet Bed', 49.99)">Buy Now</button>
+
+                <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Dog Bed">
+                    <input type="hidden" name="product_price" value="49.99">
+                    <input type="hidden" name="product_image" value="https://kindtail.com/cdn/shop/files/PINKLOUNGER-min_1200x.jpg?v=1709603766">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
             </div>
         </div>
         <div class="product-item">
@@ -136,7 +154,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
               <h3>Leash & Collar</h3>
               <p>Stylish and strong leash and collar set.</p>
               <p class="price">$19.99</p>
-              <button class="buy-btn" onclick="addToCart('Leash & Collar', 19.99)">Buy Now</button>
+
+              <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Leash & Collar">
+                    <input type="hidden" name="product_price" value="19.99">
+                    <input type="hidden" name="product_image" value="https://www.bellsandwhiskers.co.uk/wp-content/uploads/2023/07/OldGreenPuppySet.webp">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
           </div>
       </div>
       <div class="product-item">
@@ -145,7 +169,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
             <h3>Cat toy</h3>
             <p>Durable and fun toy for your cat.</p>
             <p class="price">$12.99</p>
-            <button class="buy-btn" onclick="addToCart('Cat toy', 12.99)">Buy Now</button>
+
+            <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Cat toy">
+                    <input type="hidden" name="product_price" value="12.99">
+                    <input type="hidden" name="product_image" value="https://s7d2.scene7.com/is/image/PetSmart/5325497?fmt=webp&wid=400&hei=400">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
         </div>
     </div>
     <div class="product-item">
@@ -154,7 +184,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
           <h3>Cat Food</h3>
           <p>High-quality food for your cat' nutrition.</p>
           <p class="price">$28.99</p>
-          <button class="buy-btn" onclick="addToCart('Cat Food', 28.99)">Buy Now</button>
+
+          <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Cat food">
+                    <input type="hidden" name="product_price" value="28.99">
+                    <input type="hidden" name="product_image" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWJZ7osjrRmoWNuzpI2-VPAUkvXbdqCnfHJw&s">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
       </div>
   </div>
   <div class="product-item">
@@ -163,7 +199,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
         <h3>Cat Bed</h3>
         <p>Comfortable bed for a peaceful rest.</p>
         <p class="price">$55.99</p>
-        <button class="buy-btn" onclick="addToCart('Cat bed', 55.99)">Buy Now</button>
+
+        <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Cat Bed">
+                    <input type="hidden" name="product_price" value="55.99">
+                    <input type="hidden" name="product_image" value="https://assets.petco.com/petco/image/upload/f_auto,q_auto/l_bypetco-badge,fl_relative,w_0.20,g_south_east,e_sharpen/2897122-center-1">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
     </div>
 </div>
 <div class="product-item">
@@ -172,7 +214,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       <h3>Collar</h3>
       <p>Stylish and strong collar.</p>
       <p class="price">$19.99</p>
-      <button class="buy-btn" onclick="addToCart('Collar', 19.99)">Buy Now</button>
+
+      <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Collar">
+                    <input type="hidden" name="product_price" value="19.99">
+                    <input type="hidden" name="product_image" value="https://www.nnyeo.com/cdn/shop/files/BabaNavyCatCollar_1024x1024.jpg?v=1694096194">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
   </div>
 </div>
 <div class="product-item">
@@ -181,7 +229,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       <h3>Dog and cat grooming brushe.</h3>
       <p>A very soft and useful brushe.</p>
       <p class="price">$13.99</p>
-      <button class="buy-btn" onclick="addToCart('Dog and cat grooming brushe.', 13.99)">Buy Now</button>
+
+      <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Dog and cat grooming brushe">
+                    <input type="hidden" name="product_price" value="13.99">
+                    <input type="hidden" name="product_image" value="https://m.media-amazon.com/images/I/71+gyVxYlyL.jpg">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
   </div>
 </div>
 <div class="product-item">
@@ -190,7 +244,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       <h3>Clipper kit.</h3>
       <p>For a beautiful sytle.</p>
       <p class="price">$19.99</p>
-      <button class="buy-btn" onclick="addToCart('Clipper kit.', 19.99)">Buy Now</button>
+
+      <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Clipper kit">
+                    <input type="hidden" name="product_price" value="19.99">
+                    <input type="hidden" name="product_image" value="https://wahlusa.com/media/catalog/product/0/9/09281-210_-_pet_pro.pt01_2.jpg?optimize=medium&fit=bounds&height=700&width=700&canvas=700:700">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
   </div>
 </div>
 <div class="product-item">
@@ -199,7 +259,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       <h3>Groomin scissors for pets.</h3>
       <p>Fast and a happy cut.</p>
       <p class="price">$10.99</p>
-      <button class="buy-btn" onclick="addToCart('Groomin scissors for pets.', 10.99)">Buy Now</button>
+      
+      <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Groomin scissors for pets">
+                    <input type="hidden" name="product_price" value="10.99">
+                    <input type="hidden" name="product_image" value="https://freshlybailey.com/cdn/shop/files/01_c7e5a5b8-6080-4703-97a3-924de59605a7.jpg?v=1697650252&width=1920">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
   </div>
 </div>
 <div class="product-item">
@@ -208,7 +274,13 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       <h3>Shampoo for Dogs and Cats.</h3>
       <p>Fresh and Clean.</p>
       <p class="price">$9.99</p>
-      <button class="buy-btn" onclick="addToCart('Shampoo for Dogs and Cats.', 9.99)">Buy Now</button>
+
+      <form action="checkout.php" method="POST">
+                    <input type="hidden" name="product_name" value="Shampoo for Dogs and Cats.">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_image" value="https://headsupfortails.com/cdn/shop/files/8906179171058.jpg?v=1719828998">
+                    <button type="submit" name="buy_product" class="buy-btn">Buy Now</button>
+                </form>
   </div>
 </div>
       </section>
