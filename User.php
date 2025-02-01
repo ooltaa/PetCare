@@ -13,9 +13,15 @@ class User {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (firstname, lastname, age, email, password) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (firstname, lastname, age, email, password) VALUES (:firstname, :lastname, :age, :email, :password)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssiss", $firstname, $lastname, $age, $email, $passwordHash);
+
+        
+        $stmt->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+        $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+        $stmt->bindParam(':age', $age, PDO::PARAM_INT);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $passwordHash, PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             return "Regjistrimi u krye me sukses.";
@@ -25,12 +31,12 @@ class User {
     }
 
     public function login($email, $password) {
-        $sql = "SELECT * FROM users WHERE email = ?";
+        $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $email);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
+        
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user["password"])) {
             session_start();

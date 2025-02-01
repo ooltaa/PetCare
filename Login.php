@@ -1,25 +1,30 @@
 <?php
-session_start();
 require_once 'Database.php';
 require_once 'User.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-    $db = new Database();
-    $user = new User($db->getConnection());
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+session_start(); 
 
-    if ($user->login($email, $password)) {
-        $_SESSION["logged_in"] = true;
-        $_SESSION["email"] = $email;
-        header("Location: userdashboard.php");
+$errorMessage = "";
+
+if (isset($_POST["login"])) {
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
+
+    $user = new User();
+    $loginResult = $user->login($email, $password);
+
+    if ($loginResult === true) {
+        if ($_SESSION['role'] == 'admin') {
+            header("Location: adminDashboard.php");
+        } else {
+            header("Location: userdashboard.php");
+        }
         exit();
     } else {
-        echo "<script>alert('Invalid credentials.');</script>";
+        $errorMessage = "Login failed: " . htmlspecialchars($loginResult);
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

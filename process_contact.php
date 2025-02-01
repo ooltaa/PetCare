@@ -14,21 +14,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = "";
 
     if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($phone) && !empty($services)) {
-        $stmt = $conn->prepare("INSERT INTO contact_requests (first_name, last_name, email, phone, services) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $first_name, $last_name, $email, $phone, $services);
+        try {
+            $stmt = $conn->prepare("INSERT INTO contact_requests (first_name, last_name, email, phone, services) 
+                                    VALUES (:first_name, :last_name, :email, :phone, :services)");
 
-        if ($stmt->execute()) {
-            $message = "Thank you! Your request has been received and confirmed. We will contact you soon.";
-        } else {
-            $message = "Error submitting request. Please try again later.";
+           
+            $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
+            $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
+            $stmt->bindParam(':services', $services, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                $message = "Thank you! Your request has been received and confirmed. We will contact you soon.";
+            } else {
+                $message = "Error submitting request. Please try again later.";
+            }
+
+        } catch (PDOException $e) {
+            $message = "Database error: " . $e->getMessage();
         }
-
-        $stmt->close();
     } else {
         $message = "Please fill in all required fields.";
     }
-
-    $conn->close();
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="confirmation-container">
         <h1>Request Confirmation</h1>
         <p><?php echo htmlspecialchars($message); ?></p>
-        <a href="userdashboard.php">Back to Userdashboard</a>
+        <a href="userdashboard.php">Back to User Dashboard</a>
     </div>
 
 </body>
