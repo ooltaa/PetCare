@@ -29,8 +29,8 @@
 
         <div class="dashboard-sections">
             <a href="manage_products.php" class="dashboard-card">
-                <h3>📦 Manage Products</h3>
-                <p>Add, edit, and delete products in the store.</p>
+                <h3>🛒 View Orders</h3>
+                <p>View orders, change status and delete.</p>
             </a>
             <a href="manage_requests.php" class="dashboard-card">
                 <h3>📩 Client Requests</h3>
@@ -42,7 +42,7 @@
     <h3>Navigation</h3>
     <ul>
         <li><a href="adminDashboard.php">🏠 Dashboard</a></li>
-        <li><a href="manage_products.php">📦 Manage Products</a></li>
+        <li><a href="manage_requests.php">📩 Client Requestss</a></li>
         <li><a href="admin_orders.php">🛒 View Orders</a></li>
     </ul>
 </div>
