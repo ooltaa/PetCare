@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="confirmation-container">
         <h1>Request Confirmation</h1>
         <p><?php echo htmlspecialchars($message); ?></p>
-        <a href="contact.php">Back to Contact Page</a>
+        <a href="userdashboard.php">Back to Userdashboard</a>
     </div>
 
 </body>

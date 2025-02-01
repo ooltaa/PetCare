@@ -1,190 +1,236 @@
+/* --- RESETIMI DHE STILIZIMI BAZË --- */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #d7cdcd;
   font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
 }
 
-.main {
-  
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 70px;
-}
-
+/* --- NAVBAR --- */
 .navbar {
   width: 100%;
-  max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 30px;
   align-items: center;
-  position: absolute;
+  padding: 15px 30px;
+  background-color: #c7a5ae;
+  color: white;
+  position: fixed;
   top: 0;
-}
-
-.icon {
-  width: 200px;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  color: #54310c;
-  font-size: 35px;
-  font-family: 'Arial';
-  padding-left: 20px;
-  margin-top: 5px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .menu ul {
   display: flex;
-  gap: 30px;
-  align-items: center;
+  gap: 20px;
   list-style: none;
 }
 
 .menu ul li a {
   text-decoration: none;
-  color: #0c0c0c;
+  color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   transition: 0.3s ease-in-out;
 }
 
 .menu ul li a:hover {
-  color: rgba(255, 255, 255, 0.804);
+  color: #cd8484;
+}
+.main {
+  position: relative;
+  background: url('https://img.freepik.com/premium-photo/diverse-lineup-six-dogs-one-cat-against-playful-pink-backdrop-showcasing-their-unique-personalities-expressions_95891-92058.jpg') 
+              center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding-bottom: 200px; 
 }
 
-.content {
-  margin-bottom: 10px;
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1200px;
-  color: #24211d;
-  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
 }
 
 .text-container {
-  text-align: center;
-  color: white;
-  background-color: rgba(239, 221, 221, 0.288);
-  padding: 30px 50px;
-  border-radius: 15px;
-  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+  border-radius: 12px;
+  max-width: 900px;
+  flex-direction: column;
 }
 
+
 .text-container h1 {
-  font-family: 'Times New Roman', serif;
-  font-size: 60px;
-  margin-bottom: 20px;
-  letter-spacing: 3px;
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .text-container span {
-  color: #daa8b1;
-  font-size: 80px;
+  color: #FFC0CB; 
+  font-weight: bold;
+}
+.welcome-message {
+  position: absolute;
+  top: 10%; /* Vendoset në pjesën e sipërme */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 3;
+}
+.text-container h1 {
+  font-size: 36px;
 }
 
-.text-container h2 {
+.welcome-message {
   font-size: 24px;
-  margin-bottom: 10px;
+  top: 10%;
+  padding: 8px 15px;
 }
 
-.text-container h3 {
-  font-size: 18px;
-  font-weight: normal;
-}
-
+/* --- ABOUT US SECTION --- */
 .about-us-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+  background-color: #ffdddd;
+  padding: 80px 50px;
 }
 
-.about-us-content-wrapper {
-  background-color: #e7dedf;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.about-us-text {
-    width: 50%;
-    padding: 20px;
-    border-radius: 30px;
-    border: 2px solid #ccc;
-    box-shadow: 0px 4px 6px rgba(173, 157, 157, 0.323);
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
+/* Titulli "ABOUT US" në qendër sipër tekstit */
 .about-us-header {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: #333;
+  font-size: 36px;
+  font-weight: bold;
+  color: #54310c;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.about-us-content p {
-    line-height: 1.8;
-    font-size: 16px;
-    color: #666;
+/* Ndarja vizuale poshtë titullit */
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: #d4a373;
+  margin: 10px auto;
 }
+
+/* Përmbajtja e "About Us" me tekst në të majtë dhe foto në të djathtë */
+.about-us-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Teksti në "About Us" - Kutia është më e vogël */
+.about-us-text {
+  flex: 1;
+  font-size: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  max-width: 40%;
+}
+
+/* Galeria e fotove në "About Us" - Vendoset në të djathtën e qendrës */
 .about-us-slider {
-    width: 45%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  position: relative; /* Lejon vendosjen e shigjetave mbi foto */
 }
 
-.about-us-slider {
-  width: 45%;
-  position: relative;
-  margin: auto;
-}
-
+/* Kontejneri i slider-it */
 .slider-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
+/* Slideri me fotot */
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 300%; 
 }
 
+/* Slide i fotove */
 .slide {
   min-width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Fotot janë më të mëdha dhe kanë formë rrethore të zgjeruar */
 .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%; 
-  border: 4px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px !important;
+  height: 250px !important;
+  border-radius: 50% / 60%;
+  object-fit: cover;
+  border: 5px solid #d4a373;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* SHIGJETAT E SLIDERIT */
 .prev, .next {
   position: absolute;
   top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 24px;
   padding: 10px;
   border: none;
   cursor: pointer;
-  z-index: 1;
-  transform: translateY(-50%);
+  z-index: 2; /* I vendos shigjetat mbi foto */
+  border-radius: 50%;
+  transition: background 0.5s ease-in-out;
 }
 
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Vendosja e shigjetave mbi foto */
 .prev {
   left: 10px;
 }
@@ -192,153 +238,154 @@ body {
 .next {
   right: 10px;
 }
+
+  .about-us-text {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .about-us-slider {
+    max-width: 90%;
+  }
+
+  .slide img {
+    width: 100px; /* Madhësi më e vogël për mobile */
+    height: 100px;
+  }
+
+
+/* --- STORE SECTION --- */
 .store-section {
-  padding: 50px 20px;
-  background-color: #eee3e3;
+  background-color: rgb(240, 215, 215);
+  padding: 80px 50px;
   text-align: center;
 }
 
 .store-header h2 {
-  font-size: 2.5rem;
-  color: #6f0921;
-  margin-bottom: 15px;
-}
-
-.store-header p {
-  font-size: 1rem;
-  color: #252121;
-  max-width: 800px;
-  margin: 0 auto 30px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #854d58;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .product-item {
-  background-color: #fff;
+  background: white;
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(193, 112, 148, 0.15);
   text-align: center;
 }
 
 .product-item img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  max-width: 180px;
+  height: auto;
+  border-radius: 10px;
 }
 
 .product-info {
-  padding: 15px;
-}
-
-.product-info h3 {
-  font-size: 1.5rem;
-  color: #6f0921;
-  margin: 10px 0;
-}
-
-.product-info p {
-  font-size: 1rem;
-  color: #252121;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .price {
-  font-size: 1.2rem;
   font-weight: bold;
-  color: #845e12;
+  color: #651a39;
+  font-size: 18px;
 }
 
 .buy-btn {
-  background-color: #6f0921;
-  color: white;
+  display: inline-block;
+  margin-top: 10px;
   padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #9b4060;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .buy-btn:hover {
-  background-color: #845e12;
+  background-color: #ce6c9d;
 }
+
+
 .footer {
-  background-color: #d7cdcd;
+  background-color: #c7a5ae;
   color: white;
-  padding: 50px 0;
-  font-family: 'Arial', sans-serif;
   text-align: center;
+  padding: 25px;
+  font-size: 14px;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .contact-info, .about-site {
-  width: 45%;
+  text-align: left;
+  max-width: 300px;
 }
 
-.contact-info h3, .about-site h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.contact-info p, .about-site p {
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.social-icon {
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 20px;
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
   color: white;
-  background-color: #e4cccc;
-  border-radius: 30px;
-  transition: background-color 0.3s;
-}
-
-.social-icon:hover {
-  background-color: #ff9a00;
-}
-
-.social-icon.instagram {
-  background-color: #d0b1b7;
-}
-
-.social-icon.facebook {
-  background-color: #b38991;
-}
-
-.social-icon.twitter {
-  background-color: #986d75;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .footer-bottom {
-  margin-top: 40px;
-  font-size: 14px;
+  margin-top: 10px;
 }
 
-.footer-bottom p {
-  margin: 0;
-  font-size: 14px;
-  color: #bfbfbf;
-}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
 
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .main {
+    height: 80vh;
+  }
+
+  .text-container h1 {
+    font-size: 36px;
+  }
+
+  .about-us-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us-text, .about-us-slider {
+    max-width: 90%;
+  }
+
+  .slide img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

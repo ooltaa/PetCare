@@ -1,103 +1,97 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    background-color: #5b3520bd;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .main {
-    background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-cartoon-pet-food-dog-food-e-commerce-tmall-promotion-banner-picture-image_1047378.jpg");
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-top: 70px;
-  }
-  
-  .navbar {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
-    align-items: center;
-    position: absolute;
-    top: 0;
-  }
-  
-  .icon {
-    width: 200px;
-  }
-  
-  .logo {
-    color: #54310c;
-    font-size: 35px;
-    font-family: 'Arial';
-    padding-left: 20px;
-    margin-top: 5px;
-  }
-  
-  .menu ul {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: #0c0c0c;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .menu ul li a:hover {
-    color: rgba(255, 255, 255, 0.804);
-  }
-  
-  .content {
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 1200px;
-    color: #24211d;
-    position: relative;
-  }
-  
-  .text-container {
-    text-align: center;
-    color: white;
-    background-color: rgba(239, 221, 221, 0.288);
-    padding: 30px 50px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-  }
-  
-  .text-container h1 {
-    font-family: 'Times New Roman', serif;
-    font-size: 60px;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-  }
-  
-  .text-container span {
-    color: #daa8b1;
-    font-size: 80px;
-  }
-  
-  .text-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .text-container h3 {
-    font-size: 18px;
-    font-weight: normal;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #a89198bd;
+  font-family: 'Arial', sans-serif;
+}
+
+.main {
+  background-image: url("https://t4.ftcdn.net/jpg/06/13/62/67/360_F_613626774_sLU2V1zxUkWWNmUKhci5Qa3IAaU00gcx.jpg");
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 70px;
+  padding-bottom: 300px;
+}
+
+.container {
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(239, 221, 221, 0.288);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+
+}
+
+.container h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 60px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.container span {
+  color: #daa8b1;
+  font-size: 80px;
+}
+
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: #daa8b1;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #c27b8c;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: black;
+}

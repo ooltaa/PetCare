@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Pawfect Friends</title>
+    <title>Welcome to PetCare</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     
-  <div class="main">
-    <div class="navbar">
-        <div class="icon">
-            <h2 class="logo">PetCare</h2>
-        </div>
-
-        <div class="menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="Login.php">Login</a></li>
-                <li><a href="Register.php">Register</a></li>
-            </ul>
+<div class="main">
+        <div class="container">
+            <h1>Welcome to <span>PetCare</span></h1>
+            <h2>Your one-stop destination for all pet needs.</h2>
+            <h3>Join us today and take care of your furry friends!</h3>
+            <div class="buttons">
+                <a href="Login.php" class="btn btn-primary">Login</a>
+                <a href="Register.php" class="btn btn-secondary">Register</a>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
