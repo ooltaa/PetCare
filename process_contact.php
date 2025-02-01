@@ -1,5 +1,5 @@
 <?php
-require_once 'Database.php'; // Lidhja me databazën
+require_once 'Database.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = new Database();

@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   button {
     width: 100%;
     padding: 10px;
-    background-color:rgb(107, 79, 79);
+    background-color:rgb(198, 124, 132);
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     font-size: 16px;
   }
   button:hover {
-    background-color:rgb(86, 55, 57);
+    background-color:rgb(243, 154, 160);
   }
   .form-switch {
     text-align: center;

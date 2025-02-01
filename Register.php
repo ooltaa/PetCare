@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://i.pinimg.com/736x/ed/b4/4e/edb44e0dd8d14336133fa4315e87e775.jpg'); 
+            background-image: url('https://i.pinimg.com/736x/3b/7c/cc/3b7ccc2d00a1bd385ca748996863dccf.jpg'); 
             background-position: center; 
             background-attachment: fixed; 
             display: flex;
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button {
             width: 100%;
             padding: 12px;
-            background:rgb(65, 47, 47);
+            background:rgb(173, 95, 127);
             color: white;
             font-size: 16px;
             border: none;
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         button:hover {
-            background:rgb(112, 69, 69);
+            background:rgb(234, 150, 183);
         }
 
         .form-switch {

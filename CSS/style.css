@@ -102,7 +102,7 @@ body {
 }
 .welcome-message {
   position: absolute;
-  top: 10%; /* Vendoset në pjesën e sipërme */
+  top: 10%; 
   left: 50%;
   transform: translateX(-50%);
   font-size: 36px;
@@ -124,13 +124,13 @@ body {
   padding: 8px 15px;
 }
 
-/* --- ABOUT US SECTION --- */
+
 .about-us-section {
   background-color: #ffdddd;
   padding: 80px 50px;
 }
 
-/* Titulli "ABOUT US" në qendër sipër tekstit */
+
 .about-us-header {
   font-size: 36px;
   font-weight: bold;
@@ -139,7 +139,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Ndarja vizuale poshtë titullit */
+
 .divider {
   width: 80px;
   height: 4px;
@@ -147,7 +147,7 @@ body {
   margin: 10px auto;
 }
 
-/* Përmbajtja e "About Us" me tekst në të majtë dhe foto në të djathtë */
+
 .about-us-content-wrapper {
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Teksti në "About Us" - Kutia është më e vogël */
+
 .about-us-text {
   flex: 1;
   font-size: 16px;
@@ -168,7 +168,7 @@ body {
   max-width: 40%;
 }
 
-/* Galeria e fotove në "About Us" - Vendoset në të djathtën e qendrës */
+
 .about-us-slider {
   flex: 1;
   display: flex;
@@ -176,23 +176,23 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 50%;
-  position: relative; /* Lejon vendosjen e shigjetave mbi foto */
+  position: relative; 
 }
 
-/* Kontejneri i slider-it */
+
 .slider-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* Slideri me fotot */
+
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-/* Slide i fotove */
+
 .slide {
   min-width: 100%;
   display: flex;
@@ -200,7 +200,7 @@ body {
   align-items: center;
 }
 
-/* Fotot janë më të mëdha dhe kanë formë rrethore të zgjeruar */
+
 .slide img {
   width: 400px !important;
   height: 250px !important;
@@ -210,7 +210,7 @@ body {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* SHIGJETAT E SLIDERIT */
+
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -221,7 +221,7 @@ body {
   padding: 10px;
   border: none;
   cursor: pointer;
-  z-index: 2; /* I vendos shigjetat mbi foto */
+  z-index: 2; 
   border-radius: 50%;
   transition: background 0.5s ease-in-out;
 }
@@ -230,7 +230,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Vendosja e shigjetave mbi foto */
+
 .prev {
   left: 10px;
 }
@@ -249,12 +249,10 @@ body {
   }
 
   .slide img {
-    width: 100px; /* Madhësi më e vogël për mobile */
+    width: 100px; 
     height: 100px;
   }
 
-
-/* --- STORE SECTION --- */
 .store-section {
   background-color: rgb(240, 215, 215);
   padding: 80px 50px;
