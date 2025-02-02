@@ -1,10 +1,13 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: Login.php"); 
+if (!isset($_SESSION["user_id"])) {
+    header("Location: Login.php");
     exit();
 }
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
 
 ?>
@@ -73,7 +76,7 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
           <div class="about-us-slider">
               <div class="slider-container">
                   <div class="slider" id="slider">
-                      <div class="slide">
+                      <div class="slide active">
                           <img src="https://cdn.secura.net/dims4/default/7cee611/2147483647/strip/true/crop/2000x1333+0+0/resize/845x563!/quality/90/?url=https%3A%2F%2Fk2-prod-secura.s3.us-east-1.amazonaws.com%2Fbrightspot%2F83%2Feb%2F44858e644dd7801b6a05fb40d936%2Fpet-care-business-safety-tips.jpg" alt="Image 1">
                       </div>
                       <div class="slide">
@@ -307,6 +310,6 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
       </div>
   </div>
   
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

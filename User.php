@@ -31,14 +31,23 @@ class User {
     }
 
     public function login($email, $password) {
-        $sql = "SELECT * FROM users WHERE email = :email";
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
-        
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        if ($user) {
+            if (password_verify($password, $user["password"])) {
+                return $user; // Kthe të dhënat e user-it për përdorim në sesion
+            } else {
+                return false; // Fjalëkalimi nuk është i saktë
+            }
+        } else {
+            return false; // User-i nuk ekziston
+        }
+    
 
-        if ($user && password_verify($password, $user["password"])) {
+      /*  if ($user && password_verify($password, $user["password"])) {
             session_start();
             session_regenerate_id(true);
             $_SESSION["user_id"] = $user["id"];
@@ -47,6 +56,8 @@ class User {
             return true;
         }
         return false;
-    }
+    }*/
 }
+}
+
 ?>

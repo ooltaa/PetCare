@@ -1,30 +1,38 @@
 <?php
+session_start();
 require_once 'Database.php';
 require_once 'User.php';
 
-session_start(); 
+$user = new User();
 
-$errorMessage = "";
-
-if (isset($_POST["login"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
 
-    $user = new User();
     $loginResult = $user->login($email, $password);
 
-    if ($loginResult === true) {
-        if ($_SESSION['role'] == 'admin') {
-            header("Location: adminDashboard.php");
+    if ($loginResult) {
+        $_SESSION["user_id"] = $loginResult["id"];
+        $_SESSION["user_name"] = $loginResult["firstname"] . " " . $loginResult["lastname"];
+        $_SESSION["role"] = $loginResult["role"]; // Shto rolin në sesion
+
+        // Kontrollo nëse user-i është admin apo user normal
+        if ($_SESSION["role"] == "admin") {
+            header("Location: adminDashboard.php"); // Ridrejto adminin te adminDashboard
         } else {
-            header("Location: userdashboard.php");
+            header("Location: userdashboard.php"); // Ridrejto user-in normal te userdashboard
         }
         exit();
     } else {
-        $errorMessage = "Login failed: " . htmlspecialchars($loginResult);
+        $errorMessage = "Invalid email or password. Please try again.";
     }
 }
 ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
