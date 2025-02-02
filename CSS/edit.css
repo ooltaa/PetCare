@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    background: linear-gradient(to right, #c19d9d, #896565);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body {
 .edit-request-container {
     width: 50%;
     padding: 25px;
-    background: white;
+    background: rgb(182, 153, 153);
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;

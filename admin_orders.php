@@ -28,10 +28,12 @@ $orders = $orderManager->getAllOrders();
     <link rel="stylesheet" href="CSS/admin_orders.css">
 </head>
 <body>
-    <div class="navbar">
-        <h2>Admin - Orders</h2>
-        <a href="adminDashboard.php" class="back-btn">🔙 Back to Dashboard</a>
+<div class="navbar">
+    <h2>Admin Orders</h2>
+    <div class="nav-buttons">
+        <a href="adminDashboard.php" class="back-btn">⬅ Back to Dashboard</a>
     </div>
+</div>
 
     <div class="order-container">
         <h2>All Orders</h2>
@@ -60,17 +62,16 @@ $orders = $orderManager->getAllOrders();
                     <td><?= htmlspecialchars($order['address']) ?></td>
                     <td><?= htmlspecialchars($order['created_at']) ?></td>
                     <td>
-             
-                        <form action="adminDashboard.php" method="POST">
-        <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
-        <select name="new_status">
-            <option value="Pending" <?= ($status == 'Pending') ? 'selected' : '' ?>>Pending</option>
-            <option value="Processing" <?= ($status == 'Processing') ? 'selected' : '' ?>>Processing</option>
-            <option value="Shipped" <?= ($status == 'Shipped') ? 'selected' : '' ?>>Shipped</option>
-            <option value="Cancelled" <?= ($status == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
-        </select>
-        <button type="submit" name="update_status" class="update-btn">Update</button>
-    </form>
+                        <form action="admin_orders.php" method="POST">
+                            <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
+                            <select name="new_status">
+                                <option value="Pending" <?= ($order['status'] == 'Pending') ? 'selected' : '' ?>>Pending</option>
+                                <option value="Processing" <?= ($order['status'] == 'Processing') ? 'selected' : '' ?>>Processing</option>
+                                <option value="Shipped" <?= ($order['status'] == 'Shipped') ? 'selected' : '' ?>>Shipped</option>
+                                <option value="Cancelled" <?= ($order['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
+                            </select>
+                            <button type="submit" name="update_status" class="update-btn">Update</button>
+                        </form>
                     </td>
                     <td>
                         <form action="admin_orders.php" method="POST">
