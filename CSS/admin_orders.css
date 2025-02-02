@@ -98,28 +98,6 @@ tr:hover {
     font-weight: bold;
     font-size: 14px;
 }
-
-.status-pending {
-    background-color: #ffc107;
-    color: black;
-}
-
-.status-processing {
-    background-color: #17a2b8;
-    color: white;
-}
-
-.status-shipped {
-    background-color: #28a745;
-    color: white;
-}
-
-.status-cancelled {
-    background-color: #dc3545;
-    color: white;
-}
-
-
 .update-btn, .delete-btn {
     padding: 8px 12px;
     border: none;
@@ -130,21 +108,21 @@ tr:hover {
 }
 
 .update-btn {
-    background-color: #007bff;
+    background-color: #54769d;
     color: white;
 }
 
 .update-btn:hover {
-    background-color: #0056b3;
+    background-color: #6d89a8;
 }
 
 .delete-btn {
-    background-color: #dc3545;
+    background-color: #cc4754;
     color: white;
 }
 
 .delete-btn:hover {
-    background-color: #c82333;
+    background-color: #e06f7a;
 }
 
     table {
@@ -170,11 +148,11 @@ tr:hover {
     }
     
     select:hover {
-        border-color: #28a745;
+        border-color: #6e5268;
     }
     
     .update-btn {
-        background-color: #007bff;
+        background-color: #49698c;
         color: white;
         padding: 8px 12px;
         border: none;
@@ -184,8 +162,6 @@ tr:hover {
         transition: 0.3s;
     }
     
-    .update-btn:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-    }
+    
+    
 

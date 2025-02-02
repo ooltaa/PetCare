@@ -36,7 +36,12 @@ class ClientRequest {
     public function deleteRequest($id) {
         $stmt = $this->conn->prepare("DELETE FROM contact_requests WHERE id = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 ?>
+ 

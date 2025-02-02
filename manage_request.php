@@ -73,23 +73,23 @@ $requests = $clientRequestManager->getAllRequests();
     <script>
         function deleteRequest(requestId) {
             if (confirm("Are you sure you want to delete this request?")) {
-                $.ajax({
-                    url: "manage_requests.php",
-                    type: "POST",
-                    data: { delete_request: true, request_id: requestId },
-                    success: function(response) {
-                        if (response.trim() === "success") {
-                            $("#row-" + requestId).fadeOut();
-                        } else {
-                            alert("Error deleting request. Please try again.");
-                        }
-                    },
-                    error: function() {
-                        alert("Error connecting to the server.");
+            $.ajax({
+                url: "manage_request.php",
+                type: "POST",
+                data: { delete_request: true, request_id: requestId },
+                success: function(response) {
+                    if (response.trim() === "success") {
+                        $("#row-" + requestId).fadeOut(500, function() { $(this).remove(); });
+                    } else {
+                        alert("Error deleting request. Please try again.");
                     }
-                });
-            }
+                },
+                error: function() {
+                    alert("Error connecting to the server.");
+                }
+            });
         }
+    }
     </script>
 </body>
 </html>
